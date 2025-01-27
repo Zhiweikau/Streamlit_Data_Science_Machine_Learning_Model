@@ -7,7 +7,8 @@ pages = {
     st.Page('./Mobile_Price/Chart.py', title='Chart', icon='📉'),
     st.Page('./Mobile_Price/Data processing.py', title='Data processing', icon='⚙️'),
     st.Page('./Mobile_Price/Machine Learning model.py', title='Machine Learning Model', icon='🤖'),
-    st.Page('./Mobile_Price/Testing.py', title='Testing', icon='📋')
+    st.Page('./Mobile_Price/Testing.py', title='Testing', icon='📋'),
+    st.Page('./Mobile_Price/chatbot.py', title='OpenAI', icon='🦜')
     ],
 }
 
@@ -43,3 +44,6 @@ with col2:
 if st.sidebar.button("Reset all of the Settings"):
     st.session_state.clear()
     st.switch_page("./Mobile_Price/Data.py")
+
+if st.sidebar.button("OpenAI"):
+    st.switch_page("./Mobile_Price/chatbot.py")
