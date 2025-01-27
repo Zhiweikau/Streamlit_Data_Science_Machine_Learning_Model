@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-image_path = ".\Mobile_Price\Phone_image.ipg"
+image_path = ".\Mobile_Price\Phone_image.png"
 
 col1, col2 = st.columns([0.2,0.8])
 
