@@ -3,7 +3,16 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.title("Mobile Price Classification")
+image_path = r"C:\Users\User\Desktop\ZW working\Testing\Mobile_Price\Phone_image.png"
+
+col1, col2 = st.columns([0.2,0.8])
+
+with col1:
+    st.image(image_path, width=80)
+    
+with col2:
+    st.title("Mobile Price Classification")
+
 st.markdown("---")
 st.write("Training Dataset Uploaded")
 
