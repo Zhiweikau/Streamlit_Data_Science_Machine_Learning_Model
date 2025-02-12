@@ -5,6 +5,8 @@ import pandas as pd
 if "data" not in st.session_state:
     st.session_state.data = None
 
+data = st.session_state.data
+
 # Title and Image
 image_path = r"Phone_image.png"
 
@@ -23,18 +25,14 @@ st.write("Training Dataset Uploaded")
 uploaded_file = st.file_uploader("Choose a CSV file", type="csv", key="uploaded_file")
 
 if uploaded_file is not None:
-    # Read and store data in session state only if it's a new file
-    if st.session_state.data is None:
-        st.session_state.data = pd.read_csv(uploaded_file)
-    
-    st.write("Top 5 rows of the dataset:")
-    st.dataframe(st.session_state.data.head())
-    data = st.session_state.data
+    # Always update session state with the new file
+    data = pd.read_csv(uploaded_file)
+    st.session_state.data = data  # Store updated data in session state
 
-# Check if data exists when navigating back to this page
-elif st.session_state.data is not None:
+# Ensure table always appears when navigating back
+if data is not None:
     st.write("Top 5 rows of the dataset (Persisted Data):")
-    st.dataframe(st.session_state.data.head())
+    st.dataframe(data.head())
 
 # Clear File Button
 if st.button("Clear Uploaded File"):
