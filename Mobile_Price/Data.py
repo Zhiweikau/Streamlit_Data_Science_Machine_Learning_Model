@@ -6,7 +6,7 @@ if "data" not in st.session_state:
     st.session_state.data = None
 
 # Title and Image
-image_path = r"https://github.com/Zhiweikau/Streamlit_Data_Science_Machine_Learning_Model/blob/main/Phone_image.png"
+image_path = "https://github.com/Zhiweikau/Streamlit_Data_Science_Machine_Learning_Model/blob/main/Phone_image.png"
 
 col1, col2 = st.columns([0.2, 0.8])
 
