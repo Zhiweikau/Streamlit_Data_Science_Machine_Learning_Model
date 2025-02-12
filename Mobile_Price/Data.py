@@ -29,6 +29,7 @@ if uploaded_file is not None:
     
     st.write("Top 5 rows of the dataset:")
     st.dataframe(st.session_state.data.head())
+    data = st.session_state.data
 
 # Check if data exists when navigating back to this page
 elif st.session_state.data is not None:
