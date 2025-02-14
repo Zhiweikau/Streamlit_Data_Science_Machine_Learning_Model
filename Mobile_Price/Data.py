@@ -5,6 +5,9 @@ import pandas as pd
 if "data" not in st.session_state:
     st.session_state.data = None
 
+if "uploader_key" not in st.session_state:
+    st.session_state.uploader_key = 0 
+
 data = st.session_state.data
 
 # Title and Image
@@ -22,7 +25,7 @@ st.markdown("---")
 st.write("Training Dataset Uploaded")
 
 # File Uploader
-uploaded_file = st.file_uploader("Choose a CSV file", type="csv", key="uploaded_file")
+uploaded_file = st.file_uploader("Choose a CSV file", type="csv", key=f"uploaded_file_{st.session_state.uploader_key}")
 
 if uploaded_file is not None:
     # Always update session state with the new file
@@ -37,5 +40,6 @@ if data is not None:
 # Clear File Button
 if st.button("Clear Uploaded File"):
     st.session_state.data = None  # Reset the stored data
+    st.session_state.uploaded_key += 1
     st.write("Uploaded file has been cleared.")
     st.rerun()
