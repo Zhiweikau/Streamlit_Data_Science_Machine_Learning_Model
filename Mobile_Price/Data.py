@@ -40,6 +40,6 @@ if data is not None:
 # Clear File Button
 if st.button("Clear Uploaded File"):
     st.session_state.data = None  # Reset the stored data
-    st.session_state.uploaded_key += 1
+    st.session_state.uploader_key += 1
     st.write("Uploaded file has been cleared.")
     st.rerun()
